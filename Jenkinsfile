@@ -27,8 +27,9 @@ pipeline {
         stage('build') {
             steps{
             sh '''
-            pip3 install click
-            python3 helloworld.py
+            cd sensor-processor/
+            pip3 install -r requirements.txt
+            python3 start.py --ping
             '''
             }
         }
