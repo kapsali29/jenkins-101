@@ -27,8 +27,10 @@ pipeline {
         stage('build') {
             steps{
             sh '''
+            python3 -m venv venv
+            source venv/bin/activate
             cd sensor-processor/
-            pip3 install -r requirements.txt
+            pip install -r requirements.txt
             python3 start.py --ping
             '''
             }
