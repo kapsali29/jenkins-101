@@ -1,17 +1,24 @@
 pipeline {
-    agent { 
+    agent {
         node {
-            label 'pka-python-agent'
-            }
-      }
+            label 'new-py-template'
+        }
+    }
     stages {
-        stage('Build') {
-            steps {
-                echo "Building.."
-                sh '''
-                echo "doing build stuff.."
-                echo "the build is ${BUILD_ID}"
-                '''
+        stage('who') {
+            steps{
+            sh '''
+            whoami
+            ls -la
+            echo "the BUILD ID is ${BUILD_ID}"
+            '''
+            }
+        }
+        stage('run') {
+            steps{
+            sh '''
+            python3 helloworld.py
+            '''
             }
         }
     }
