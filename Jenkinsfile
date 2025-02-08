@@ -14,10 +14,18 @@ pipeline {
             '''
             }
         }
-        stage('run') {
+        stage('pre-run') {
             steps{
             sh '''
             python3 helloworld.py
+            '''
+            }
+        }
+        stage('build') {
+            steps{
+            sh '''
+            echo "installing requirements"
+            pip install click
             '''
             }
         }
