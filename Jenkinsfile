@@ -33,5 +33,12 @@ pipeline {
             '''
             }
         }
+        stage('test') {
+            steps {
+                sh'''
+                python -m unittest tests
+                '''
+            }       
+        }
     }
 }
