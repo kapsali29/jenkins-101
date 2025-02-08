@@ -3,7 +3,7 @@ from script import SensorProcessor
 
 
 @click.command()
-@click.option("--ping", help="returns acknowledgment")
+@click.option("--ping", "ping", is_flag=True, default=False)
 @click.option("--path", help="path to be provided as an input")
 @click.option("--txt", is_flag=True, help="text input to be provided")
 @click.argument("text", required=False)
