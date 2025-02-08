@@ -36,6 +36,7 @@ pipeline {
         stage('test') {
             steps {
                 sh'''
+                cd sensor-processor/
                 python3 -m unittest tests.test_mock_script
                 '''
             }       
