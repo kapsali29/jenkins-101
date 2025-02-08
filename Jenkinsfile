@@ -36,7 +36,7 @@ pipeline {
         stage('test') {
             steps {
                 sh'''
-                python3 -m unittest tests
+                python3 -m unittest tests.test_mock_script
                 '''
             }       
         }
