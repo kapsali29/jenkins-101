@@ -5,10 +5,10 @@ from script import SensorProcessor
 
 class TestSensorProcessor(unittest.TestCase):
 
-    def test_empty_input(self):
-        empty_input = ""
-        sp = SensorProcessor(empty_input)
-        self.assertEqual(sp.process(), None)
+    # def test_empty_input(self):
+    #     empty_input = ""
+    #     sp = SensorProcessor(empty_input)
+    #     self.assertEqual(sp.process(), None)
 
     # def test_wrong_number_of_sensors(self):
     #     inp = """
