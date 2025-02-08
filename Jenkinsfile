@@ -1,7 +1,7 @@
 pipeline {
     agent {
         node {
-            label 'new-py-template'
+            label 'venv-agent'
         }
     }
     stages {
