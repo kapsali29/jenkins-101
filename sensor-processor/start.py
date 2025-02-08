@@ -3,10 +3,11 @@ from script import SensorProcessor
 
 
 @click.command()
+@click.option("--ping", help="returns acknowledgment")
 @click.option("--path", help="path to be provided as an input")
 @click.option("--txt", is_flag=True, help="text input to be provided")
 @click.argument("text", required=False)
-def start(path, txt, text):
+def start(path, txt, text, ping):
     if path:
         sp = SensorProcessor(file_inp=path)
         outliers = sp.execute()
@@ -14,7 +15,9 @@ def start(path, txt, text):
         text_inp = click.edit(text if text else "Enter your text here...")
         sp = SensorProcessor(text_inp=text_inp)
         outliers = sp.execute()
-
+    if ping:
+        print("pong")
+    
 
 if __name__ == "__main__":
     start()
