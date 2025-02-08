@@ -25,7 +25,8 @@ pipeline {
             steps{
             sh '''
             echo "installing requirements"
-            pip install click
+            python3 --version
+            pip3 --version
             '''
             }
         }
